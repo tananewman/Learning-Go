@@ -1,12 +1,11 @@
 package main
 
 func main() {
-	cards := getNewDeck()
+	cards := getNewDeckFromFile("deck.txt")
+	cards.print()
 
-	hand, remainingCards := deal(cards, 5)
-
-	hand.print()
-	remainingCards.print()
+	cards.shuffle()
+	cards.print()
 }
 
 func assignNewCard(newCardText string) string {
